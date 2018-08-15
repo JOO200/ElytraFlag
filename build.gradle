@@ -1,0 +1,35 @@
+project.ext.targetServers = ["all"]
+project.ext.targetTestServers = ["all"]
+
+version = 'SERVER-SNAPSHOT'
+group = "de.terraconia";
+
+buildscript {
+    if (project.hasProperty('tcGradleScripts')) {
+        apply from: file(tcGradleScripts + '/tc-buildscript.gradle'), to: buildscript
+    }
+}
+
+apply plugin: 'java'
+if (project.hasProperty('tcGradleScripts')) {
+    apply from: tcGradleScripts + '/tc-project.gradle'
+}
+
+repositories {
+    mavenCentral()
+    flatDir { dir '/libs' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url 'http://maven.sk89q.com/artifactory/repo/' }
+    maven { url 'http://exlll.de:8081/artifactory/releases/' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
+}
+
+dependencies {
+    compile group: 'org.spigotmc', name: 'spigot-api', version: '1.13-R0.1-SNAPSHOT', changing: false, transitive: false
+    compile group: 'org.bukkit', name: 'bukkit', version: '1.13-R0.1-SNAPSHOT', changing: false, transitive: false
+    //compile group: 'com.sk89q.worldguard', name: 'worldguard-legacy', version: '6.2', changing: false, transitive: false
+    compile group: 'com.sk89q.worldedit', name: 'worldedit-core', version: '6.1', changing: false, transitive: false
+    compile group: 'tc.plugins', name: 'worldguard', version: '7.0.0-SNAPSHOT'
+    compile group: 'de.exlll', name: 'configlib-bukkit', version: '1.4.0', changing: false, transitive: false
+    compile group: 'net.md-5', name: 'bungeecord-chat', version: '1.13-SNAPSHOT', changing: false, transitive: false
+}

@@ -1,0 +1,6 @@
+name: ElytraFlag
+main: de.joo.elytraflag.ElytraFlagPlugin
+version: 1.0
+author: JOO200
+loadbefore: [WorldGuard]
+depend: [WorldGuard, ConfigLib]
