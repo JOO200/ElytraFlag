@@ -28,6 +28,6 @@ dependencies {
     compile group: 'org.bukkit', name: 'bukkit', version: '1.13-R0.1-SNAPSHOT', changing: false, transitive: false
     compile group: 'tc.plugins', name: 'worldedit', version: '7.0.0-SNAPSHOT', changing: false, transitive: false
     compile group: 'tc.plugins', name: 'worldguard', version: '7.0.0-SNAPSHOT', changing: false, transitive: false
-    compile group: 'de.exlll', name: 'configlib-bukkit', version: '1.4.0', changing: false, transitive: false
+    compile group: 'de.exlll', name: 'configlib-bukkit', version: '2.2.0', changing: false, transitive: false
     compile group: 'net.md-5', name: 'bungeecord-chat', version: '1.13-SNAPSHOT', changing: false, transitive: false
 }
