@@ -1,7 +1,7 @@
 package de.joo.elytraflag;
 
-import de.exlll.configlib.Comment;
-import de.exlll.configlib.Configuration;
+import de.exlll.configlib.annotation.Comment;
+import de.exlll.configlib.configs.yaml.YamlConfiguration;
 
 import java.nio.file.Path;
 
@@ -25,7 +25,7 @@ import java.nio.file.Path;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see http://www.gnu.org/licenses/.
  */
-public class ElytraFlagConfig extends Configuration {
+public class ElytraFlagConfig extends YamlConfiguration {
     protected ElytraFlagConfig(Path configPath) {
         super(configPath);
     }

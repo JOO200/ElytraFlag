@@ -33,11 +33,7 @@ public class ElytraFlagPlugin extends JavaPlugin{
     @Override
     public void onEnable() {
         config = new ElytraFlagConfig(Paths.get(getDataFolder() + "/config.yml"));
-        try {
-            config.loadAndSave();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        config.loadAndSave();
         SessionManager manager = WorldGuard.getInstance().getPlatform().getSessionManager();
         if(manager == null) {
             getLogger().warning("Session Manager not found. Flag not registered");
