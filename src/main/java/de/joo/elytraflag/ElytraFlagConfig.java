@@ -25,15 +25,16 @@ import java.nio.file.Path;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see http://www.gnu.org/licenses/.
  */
+
 public class ElytraFlagConfig extends YamlConfiguration {
     protected ElytraFlagConfig(Path configPath) {
         super(configPath);
     }
 
-    @Comment("Nachricht beim Betreten einer Region, wo Eltra Fliegen verboten ist.")
-    private String enterFly = "§7Das Fliegen mit Elytren ist hier deaktiviert.";
-    @Comment("Nachricht beim Versuch zu fliegen.")
-    private String tryFly = "§7Das Fliegen mit Elytren ist hier deaktiviert.";
+    @Comment("Message entering with elytra without permission.")
+    private String enterFly = "§7You can't use elytras here.";
+    @Comment("Message toggling gliding state.")
+    private String tryFly = "§7You can't use elytras here.";
 
     public String getEnterFly() {
         return enterFly;

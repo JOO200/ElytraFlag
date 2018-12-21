@@ -5,7 +5,6 @@ import com.sk89q.worldguard.protection.flags.registry.FlagConflictException;
 import com.sk89q.worldguard.session.SessionManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.io.IOException;
 import java.nio.file.Paths;
 
 /**
@@ -47,7 +46,7 @@ public class ElytraFlagPlugin extends JavaPlugin{
         try {
             WorldGuard.getInstance().getFlagRegistry().register(ElytraFlag.ELYTRA_FLAG);
         } catch (FlagConflictException e) {
-            getLogger().severe("Elytra Flag bereits registriert!");
+            getLogger().severe("Elytra Flag already registered!");
             return;
         }
     }

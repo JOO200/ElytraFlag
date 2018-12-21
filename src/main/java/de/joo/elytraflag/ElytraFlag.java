@@ -1,5 +1,6 @@
 package de.joo.elytraflag;
 
+import com.sk89q.worldedit.bukkit.BukkitAdapter;
 import com.sk89q.worldedit.util.Location;
 import com.sk89q.worldguard.LocalPlayer;
 import com.sk89q.worldguard.bukkit.BukkitPlayer;
@@ -34,6 +35,7 @@ import java.util.Set;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see http://www.gnu.org/licenses/.
  */
+
 public class ElytraFlag extends FlagValueChangeHandler<StateFlag.State> {
 
     public static final StateFlag ELYTRA_FLAG = new StateFlag("elytra-use", true);
@@ -62,7 +64,7 @@ public class ElytraFlag extends FlagValueChangeHandler<StateFlag.State> {
         Player p = ((BukkitPlayer) player).getPlayer();
         if(p.isGliding()) {
             p.setGliding(false);
-            p.teleport(PositionHelper.getNextHigh(p.getWorld(), p.getLocation()));
+            BukkitAdapter.adapt(p).setOnGround(BukkitAdapter.adapt(p).getLocation());
             p.sendMessage(ElytraFlagPlugin.config.getEnterFly());
         }
         return true;
